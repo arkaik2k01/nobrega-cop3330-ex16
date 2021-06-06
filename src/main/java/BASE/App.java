@@ -8,7 +8,6 @@ package BASE;
 /*
 Program 16 - Legal Driving Age
 You can test for equality, but you may need to test to see how a number compares to a known value and display a message if the number is too low or too high.
-
 Write a program that asks the user for their age and compare it to the legal driving age of sixteen.
 If the user is sixteen or older, then the program should display "You are old enough to legally drive."
 If the user is under sixteen, the program should display "You are not old enough to legally drive."
@@ -22,7 +21,8 @@ You are old enough to legally drive.
 
 Constraints
 Use a single output statement.
-Use a ternary operator to write this program. If your language doesn’t support a ternary operator, use a regular if/else statement, and still use a single output statement to display the message.
+Use a ternary operator to write this program. If your language doesn’t support a ternary operator, use a regular if/else statement,
+and still use a single output statement to display the message.
 
 Challenges
 If the user enters a number that’s less than zero or enters non-numeric data, display an error message that asks the user to enter a valid age.
@@ -30,10 +30,23 @@ Instead of hard-coding the driving age in your program logic, research driving a
 Prompt for the age, and display which countries the user can legally drive in.
  */
 
+import java.awt.peer.SystemTrayPeer;
+import java.util.Scanner;
+
 public class App
 {
+    static Scanner in = new Scanner(System.in);
+    private final int LEGALAGE = 16;
+    private final String LEGAL = "You are old enough to legally drive.";
+    private final String ILLEGAL = "You are not old enough to legally drive.";
+
     public static void main(String[] args)
     {
+        App prog = new App();
 
+        System.out.print("What is your age? ");
+        int age = in.nextInt();
+
+        System.out.println((age>=prog.LEGALAGE) ? (prog.LEGAL):(prog.ILLEGAL));
     }
 }
